@@ -7,5 +7,6 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'Apache', :file => 'LICENSE' }
   s.source       = { :git => "https://github.com/mheicke/JFCommon", :tag => "v#{s.version}" }
   s.platform     = :ios
-  s.source_files = 'JFBCrypt.*', 'JFGC.h', 'JFRandom.*'
+  s.source_files = 'JFBCrypt.h', 'JFBCrypt.m', 'JFGC.h', 'JFRandom.h', 'JFRandom.m'
+  s.requires_arc = false
 end
