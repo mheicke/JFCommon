@@ -8,5 +8,5 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/mheicke/JFCommon", :tag => "v#{s.version}" }
   s.platform     = :ios
   s.source_files = 'JFBCrypt.h', 'JFBCrypt.m', 'JFGC.h', 'JFRandom.h', 'JFRandom.m'
-  s.requires_arc = false
+  s.requires_arc = true
 end
