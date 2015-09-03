@@ -515,10 +515,10 @@ signed char index_64[] = {
 		ret2[off] = (signed char) [rs characterAtIndex: off];
 	}
 	
-	ret = [NSData dataWithBytes: ret2 length: olen];
+	ret = [[NSData dataWithBytes: ret2 length: olen] mutableCopy];
 	JFFree(ret2);
 	
-	return ret;
+	return [ret copy];
 }
 
 
