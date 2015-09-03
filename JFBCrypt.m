@@ -508,6 +508,10 @@ signed char index_64[] = {
 		++olen;
 	}
 	
+    if (olen <= 0) {
+        return nil;
+    }
+    
 	signed char *ret2 = malloc(olen);
 	for (off = 0; off < olen; off++) {
 		ret2[off] = (signed char) [rs characterAtIndex: off];
