@@ -572,7 +572,7 @@ signed char index_64[] = {
 + (SInt32) streamToWord: (NSData *) d off: (SInt32 *) offp {
 	
 	signed char *data = (signed char *) [d bytes];
-	SInt32 dataLength = [d length];
+	SInt32 dataLength = (SInt32)[d length];
 	SInt32 i;
 	SInt32 word = 0;
 	SInt32 off = offp[0];
@@ -810,7 +810,7 @@ signed char index_64[] = {
 	}
 	
 	NSRange range = NSMakeRange(off, 2);
-	rounds = [[salt substringWithRange: range] integerValue];
+	rounds = (SInt32)[[salt substringWithRange: range] integerValue];
 	
 	range = NSMakeRange(off + 3, (off + 25) - (off + 3));
 	realSalt = [salt substringWithRange: range];
@@ -839,7 +839,7 @@ signed char index_64[] = {
 	[hashedPassword appendFormat: @"%d", (int)rounds];
 	[hashedPassword appendString: @"$"];
 	[hashedPassword appendString: [JFBCrypt encodeData: saltData
-											  ofLength: [saltData length]]];
+											  ofLength: (SInt32)[saltData length]]];
 	[hashedPassword appendString: [JFBCrypt encodeData: hashedData
 											  ofLength: 23]];
 	
@@ -870,7 +870,7 @@ signed char index_64[] = {
 	[salt appendFormat: @"%d", (int)numberOfRounds];
 	[salt appendString: @"$"];
 	[salt appendString: [JFBCrypt encodeData: randomData
-									ofLength: [randomData length]]];
+									ofLength: (SInt32)[randomData length]]];
 	
 	return salt;
 }
